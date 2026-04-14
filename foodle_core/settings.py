@@ -36,6 +36,7 @@ SHARED_APPS = [
     'users',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     # 'finance',
     # 'menu',
     # 'inventory',
@@ -49,6 +50,7 @@ TENANT_APPS = [
     'django.contrib.messages',
     'django.contrib.admin',
     'users',
+    'rest_framework.authtoken',
     'finance',
     'menu',
     'inventory',
@@ -121,6 +123,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'foodle_core.authentication.BearerTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
 }
 

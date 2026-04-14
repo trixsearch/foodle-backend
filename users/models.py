@@ -6,6 +6,7 @@ class User(AbstractUser):
     class Role(models.TextChoices):
         SUPERADMIN = 'SUPERADMIN', 'Foodle SaaS Owner'
         CAFE_OWNER = 'CAFE_OWNER', 'Tenant Admin'
+        MANAGER = 'MANAGER', 'Shift Manager'
         CASHIER = 'CASHIER', 'Counter Person'
         CHEF = 'CHEF', 'Kitchen Staff'
 
